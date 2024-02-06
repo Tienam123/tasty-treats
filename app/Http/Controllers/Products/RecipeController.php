@@ -1,24 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Products;
 
-use App\Http\Controllers\Products\RecipeController;
-use App\Models\Home;
+use App\Http\Controllers\Controller;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class HomeController extends Controller
+class RecipeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(RecipeController $recipes
-    )
+    public function index()
     {
-       $recipesList = $recipes->index();
-        return Inertia::render('App', [
-            'recipes' => $recipesList,
-        ]);
+        $recipes = Recipe::all();
+        return $recipes;
     }
 
     /**
@@ -40,7 +36,7 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Home $home)
+    public function show(Recipe $recipes)
     {
         //
     }
@@ -48,7 +44,7 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Home $home)
+    public function edit(Recipe $recipes)
     {
         //
     }
@@ -56,7 +52,7 @@ class HomeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Home $home)
+    public function update(Request $request, Recipe $recipes)
     {
         //
     }
@@ -64,7 +60,7 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Home $home)
+    public function destroy(Recipe $recipes)
     {
         //
     }

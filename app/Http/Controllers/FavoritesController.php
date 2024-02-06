@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Products\RecipeController;
 use App\Models\Home;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class HomeController extends Controller
+class FavoritesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(RecipeController $recipes
-    )
+    public function index()
     {
-       $recipesList = $recipes->index();
-        return Inertia::render('App', [
-            'recipes' => $recipesList,
-        ]);
+        return Inertia::render('Favorites');
     }
 
     /**

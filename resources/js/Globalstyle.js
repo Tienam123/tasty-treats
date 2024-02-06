@@ -1,29 +1,33 @@
 import {createGlobalStyle} from 'styled-components';
+import theme from 'tailwindcss/defaultTheme.js';
 
 export const Globalstyle = createGlobalStyle`
     #app {
         max-width: 1200px;
         margin: 0 auto;
     }
-    body {
-        padding: 0 15px;
-        transition: all linear 500ms;
-        background: ${props => {
-          if (props.theme) {
-              localStorage.setItem('theme',true)
-              return '#050505'
-          } else {
-              localStorage.setItem('theme','')
-            return '#f0f0f0'
-          }
-        }};
-        color: ${props => {
-            if (props.theme) {
-                return '#fff'
-            } else {
-                return '#000'
-            }
-        }};
+
+    body.dark {
+        background-color: #050505;
+        color: #ffffff;
+        transition: all linear 200ms;
     }
 
-`
+    body.light {
+        background-color: #f0f0f0;
+        color: #000000;
+        transition: all linear 200ms;
+    }
+
+    ${props => {
+        switch (props.theme) {
+            case 'light':
+                document.body.classList.remove('dark')
+                document.body.classList.add('light');
+                break;
+            case 'dark':
+                document.body.classList.add('dark');
+                document.body.classList.remove('light');
+        }
+    }}
+`;

@@ -27,8 +27,6 @@ body {
 	scroll-behavior: smooth;
 }
 body {
-	color: $mainColor;
-  background-color: $mainBgColor;
 	line-height: 1;
 	font-family: $fontFamily;
 	font-size: $fontSize;
@@ -46,6 +44,7 @@ button,
 textarea {
 	font-family: $fontFamily;
 	font-size: inherit;
+    box-sizing: border-box;
 }
 button {
 	cursor: pointer;

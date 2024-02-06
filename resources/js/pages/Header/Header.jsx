@@ -7,17 +7,12 @@ import style from './Header.module.scss';
 import {ThemeSwitcher} from '@/components/ThemeSwitcher/ThemeSwitcher.jsx';
 import {NavBar} from '@/components/NavBar/NavBar.jsx';
 
-export const Header = (props) => {
-    const {
-        changeTheme,
-        theme,
-    } = props;
+export const Header = ({checked,setChecked}) => {
     return (
         <HeaderStyled >
             <NavBar/>
             <Link href="/home" className={style.logo}><span>tasty</span>treats.</Link>
-            <ThemeSwitcher theme={theme}
-                           changeTheeme={changeTheme}/>
+            <ThemeSwitcher checked={checked} setChecked={setChecked}/>
 
         </HeaderStyled>
     );

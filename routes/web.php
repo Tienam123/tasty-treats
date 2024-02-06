@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\FavoritesController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +14,11 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function () {
+    return redirect('/home');
+});
 
-Route::get('/home', function () {
-    return Inertia::render('App');
-});
-Route::get('/favorites', function () {
-    return Inertia::render('Favorites');
-});
+
+Route::get('/home', [HomeController::class,'index'])->name('home.index');
+Route::get('/favorites', [FavoritesController::class,'index'])->name('favorites.index');
 
