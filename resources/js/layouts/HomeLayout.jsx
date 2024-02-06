@@ -23,14 +23,6 @@ export class HomeLayout extends Component {
         this.setState({theme:newTheme})
         localStorage.setItem('theme', newTheme);
     };
-    // componentDidMount() {
-    //     this.setState(prevState => {
-    //         return {
-    //             checked: JSON.parse(localStorage.getItem('theme')),
-    //             theme:JSON.parse(localStorage.getItem('theme'))
-    //         }
-    //     });
-    // }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.checked !== this.state.checked) {
             localStorage.setItem('checked', this.state.checked);
@@ -41,7 +33,6 @@ export class HomeLayout extends Component {
     }
 
     render() {
-        console.log(JSON.parse(localStorage.getItem('checked')));
         return (
             <>
                 <Header checked={this.state.checked}

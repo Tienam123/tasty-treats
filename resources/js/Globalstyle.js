@@ -5,6 +5,7 @@ export const Globalstyle = createGlobalStyle`
     #app {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 15px;
     }
 
     body.dark {

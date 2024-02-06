@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipe;
+use App\Models\Products\Recipe;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
@@ -13,8 +13,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::all();
-        return $recipes;
+      return Recipe::paginate(12);
     }
 
     /**

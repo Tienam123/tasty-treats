@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipe;
+use App\Models\Products\Category;
+use App\Models\Products\Recipe;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -13,8 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::all();
-        return $recipes;
+        return Category::all();
     }
 
     /**
